@@ -61,7 +61,12 @@
         }( document, "script", "twitter-wjs" ) );
 
         twttr.ready( function( twttr ){
+
             console.log( 'twitter ready.' );
+
+            twttr.events.bind( 'tweet', function(){
+                alert( 'ツイート！' );
+            } );
         } );
     </script>
 </body>
