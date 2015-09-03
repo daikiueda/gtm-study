@@ -18,7 +18,9 @@
     <!-- Facebook Social Interaction Tracking -->
     <script>
       window.fbAsyncInit = function(){
-          alert(123)
+        FB.Event.subscribe( 'edge.create', function(){
+          alert( 'いいね！' );
+        } );
       };
     </script>
 
