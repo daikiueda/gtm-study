@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>GTM</title>
 
-    <meta property="og:url"           content="http://daikiueda.github.io/sns.html" />
+    <meta property="og:url"           content="http://daikiueda.github.io/sns-jquery-socialbutton.html" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="daikiueda.github.io" />
     <meta property="og:description"   content="daikiueda.github.io" />
@@ -31,24 +31,7 @@
                 alert( 'いいね！' );
             } );
         };
-    </script>
 
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.4";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-
-    <h1>GTM</h1>
-    <div class="fb-like"></div>
-    <div class="fb-share-button" data-layout="button_count"></div>
-    <div><a href="https://twitter.com/share" class="twitter-share-button" data-via="ue_di">Tweet</a></div>
-
-    <script>
         window.twttr = ( function( d, s, id ){
             var js, fjs = d.getElementsByTagName(s)[0],
             t = window.twttr || {};
@@ -73,6 +56,21 @@
             twttr.events.bind( 'tweet', function(){
                 alert( 'ツイート！' );
             } );
+        } );
+    </script>
+
+    <h1>GTM</h1>
+    <div class="facebook-like"></div>
+    <div class="facebook-share"></div>
+    <div class="twitter-tweet"></div>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="lib/jquery.socialbutton-1.9.1.js"></script>
+    <script>
+        $( function(){
+            $( '.facebook-like' ).socialbutton( 'facebook_like' );
+            $( '.facebook-share' ).socialbutton( 'facebook_share' );
+            $( '.twitter-tweet' ).socialbutton( 'twitter', { button : "horizontal" } );
         } );
     </script>
 </body>
